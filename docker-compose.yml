@@ -4,7 +4,7 @@ services:
     container_name: my_wordpress
     image: wordpress
     ports:
-      - "8080:80"
+      - "6060:80"
     links:
       - mysql
     environment:
