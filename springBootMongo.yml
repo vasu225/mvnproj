@@ -11,14 +11,12 @@ spec:
       labels:
         name: springboot
     spec:
-      imagePullSecrets:
-      - name: dockerreposecret
       containers:
       - image: vasunaidu/spring-boot-mongo
         name: springboot
         ports:
         - name: springboot
-          containerPort: 8085      
+          containerPort: 8080    
         ---
 # Node Port Service
 apiVersion: v1
@@ -31,7 +29,7 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      targetPort: 8085
+      targetPort: 8080
   selector:
     name: springboot
 ---
